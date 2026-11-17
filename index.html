@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MORPH | Desarrollo Web & Sistemas a Medida</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dark-mode">
+    <!-- Luces ambientales de fondo -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <!-- Navegación fija -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo nav-trigger" data-target="inicio">
+            <img src="logo.png" alt="MORPH Logo" class="logo-img">
+            <span>MORPH</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#inicio" class="nav-trigger active-link" data-target="inicio">Inicio</a></li>
+            <li><a href="#sobre" class="nav-trigger" data-target="sobre">Nosotros</a></li>
+            <li><a href="#proyectos" class="nav-trigger" data-target="proyectos">Proyectos</a></li>
+            <li><a href="#servicios" class="nav-trigger" data-target="servicios">Servicios</a></li>
+            <li><a href="#contacto" class="nav-trigger" data-target="contacto">Contacto</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">
+                <i data-lucide="sun" id="theme-icon"></i>
+            </button>
+            <button id="menu-toggle" class="btn-icon mobile-only" aria-label="Abrir menú">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- CONTENEDOR PRINCIPAL (Solo muestra 1 sección a la vez) -->
+    <main class="viewport-container">
+
+        <!-- 1. SECCIÓN INICIO -->
+        <section id="inicio" class="tab-section active">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Desarrollo de Software • Cochabamba
+                    </div>
+                    <h1>Transformamos tus ideas en <span class="gradient-text">soluciones digitales</span></h1>
+                    <p class="subtitle">
+                        En <strong>MORPH</strong> diseñamos y desarrollamos sistemas web modernos y a medida. Evolucionamos tus procesos manuales hacia herramientas ágiles y eficientes.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary nav-trigger" data-target="proyectos">
+                            <span>Ver proyectos</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                        <a href="https://wa.me/59168444598?text=Hola%20MORPH,%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn-secondary">
+                            <span>Cotizar proyecto</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Libélula limpia -->
+                <div class="hero-visual">
+                    <div class="dragonfly-wrapper">
+                        <div class="orbit-ring"></div>
+                        <img src="logo.png" alt="Libélula MORPH" class="dragonfly-clean">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. SECCIÓN NOSOTROS -->
+        <section id="sobre" class="tab-section">
+            <div class="about-card">
+                <span class="section-tag">Sobre MORPH</span>
+                <h2>Tecnología cercana para <span class="gradient-text">tu negocio</span></h2>
+                <p class="about-text">
+                    Somos un estudio de desarrollo web en Cochabamba, Bolivia. Ayudamos a pequeños negocios a dejar atrás los cuadernos y procesos desordenados con plataformas intuitivas, rápidas y adaptadas exactamente a su forma de trabajar.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-pill">HTML5 / CSS3</span>
+                    <span class="tech-pill">JavaScript</span>
+                    <span class="tech-pill">Supabase</span>
+                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">Diseño Responsivo</span>
+                </div>
+                <div style="margin-top: 30px;">
+                    <button class="btn-primary nav-trigger" data-target="proyectos">
+                        <span>Explorar Portafolio</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN PROYECTOS (CARRUSEL CON 4 TRABAJOS) -->
+        <section id="proyectos" class="tab-section">
+            <div class="section-header">
+                <span class="section-tag">Portafolio</span>
+                <h2>Proyectos <span class="gradient-text">Destacados</span></h2>
+            </div>
+
+            <div class="carousel-wrapper">
+                <button class="carousel-btn prev-btn" id="prev-project" aria-label="Anterior">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carousel-track">
+                        
+                        <!-- Proyecto 1: Dental Center -->
+                        <article class="project-card">
+                            <div class="browser-mockup">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <div class="project-preview dental-preview">
+                                    <span class="preview-category">Ventas e Inventario</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-tags">
+                                    <span>Supabase</span>
+                                    <span>WhatsApp API</span>
+                                </div>
+                                <h3>Dental Center</h3>
+                                <p>Catálogo web con carrito por WhatsApp y panel interno de ventas e inventario para insumos odontológicos.</p>
+                                <a href="https://dentalcenter3.netlify.app/" target="_blank" class="btn-card">
+                                    <span>Ver sistema</span>
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Proyecto 2: Kawsay / Clima -->
+                        <article class="project-card">
+                            <div class="browser-mockup">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <div class="project-preview kawsay-preview">
+                                    <span class="preview-category">Clima & Cultura</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-tags">
+                                    <span>API Clima</span>
+                                    <span>Web Interactiva</span>
+                                </div>
+                                <h3>Kawsay Cochabamba</h3>
+                                <p>Plataforma web enfocada en el clima, turismo y difusión cultural de Cochabamba con datos en tiempo real.</p>
+                                <a href="https://kawsaycochabamba.vercel.app" target="_blank" class="btn-card">
+                                    <span>Ver proyecto</span>
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Proyecto 3: Cafetería -->
+                        <article class="project-card">
+                            <div class="browser-mockup">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <div class="project-preview cafe-preview">
+                                    <span class="preview-category">Menú Digital</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-tags">
+                                    <span>Catálogo</span>
+                                    <span>Pedidos Online</span>
+                                </div>
+                                <h3>Cafetería Aroma</h3>
+                                <p>Menú digital interactivo para cafetería con selección de productos, personalización y pedidos directos.</p>
+                                <a href="https://wa.me/59168444598?text=Hola%20MORPH,%20me%20interesa%20un%20sistema%20para%20cafetería" target="_blank" class="btn-card">
+                                    <span>Solicitar demo</span>
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                        <!-- Proyecto 4: Barbería -->
+                        <article class="project-card">
+                            <div class="browser-mockup">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <div class="project-preview barber-preview">
+                                    <span class="preview-category">Reservas & Turnos</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <div class="card-tags">
+                                    <span>Reservas</span>
+                                    <span>UI Moderna</span>
+                                </div>
+                                <h3>Barbería Elite</h3>
+                                <p>Sistema web de presentación de cortes, tarifas y agendamiento rápido de citas para barbería.</p>
+                                <a href="https://wa.me/59168444598?text=Hola%20MORPH,%20me%20interesa%20un%20sistema%20para%20barbería" target="_blank" class="btn-card">
+                                    <span>Solicitar demo</span>
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn next-btn" id="next-project" aria-label="Siguiente">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN SERVICIOS -->
+        <section id="servicios" class="tab-section">
+            <div class="section-header">
+                <span class="section-tag">Lo que hacemos</span>
+                <h2>Nuestros <span class="gradient-text">Servicios</span></h2>
+            </div>
+
+            <div class="grid-services">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="layout"></i></div>
+                    <h3>Páginas Web Informativas</h3>
+                    <p>Sitios modernos para presentar tu marca, ubicación, servicios y medios de contacto profesional.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="shopping-bag"></i></div>
+                    <h3>Catálogos con WhatsApp</h3>
+                    <p>Muestra tus productos organizados y facilita que tus clientes armen su pedido y lo envíen al instante.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="database"></i></div>
+                    <h3>Sistemas de Gestión</h3>
+                    <p>Controla stock, precios, roles de usuario y registros de ventas desde cualquier dispositivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN CONTACTO -->
+        <section id="contacto" class="tab-section">
+            <div class="footer-cta">
+                <span class="section-tag">¿Empezamos?</span>
+                <h2>¿Listo para digitalizar tu negocio?</h2>
+                <p>Hablemos de tu próximo proyecto y llévalo al siguiente nivel.</p>
+                <a href="https://wa.me/59168444598?text=Hola%20MORPH,%20quiero%20cotizar%20un%20proyecto" target="_blank" class="btn-whatsapp">
+                    <i data-lucide="message-circle"></i>
+                    <span>Contáctame por WhatsApp (68444598)</span>
+                </a>
+                <p class="copyright">© 2026 MORPH • Cochabamba, Bolivia. Todos los derechos reservados.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
